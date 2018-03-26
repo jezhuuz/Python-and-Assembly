@@ -1,0 +1,17 @@
+Jenna Zhu
+jennazhu@bu.edu
+CS111 Problem Set 4
+Problem 0
+
+
+1.Error checking and error-handling are the most important ideas and steps in any project.
+A major preventable factor would have been to set limits to the bits of data to observe
+and prevent overflow errors. As the article mentioned, another big preventative step
+is to have every part of a complex software system run its own thoroughly tested,
+simulated, and debugged software to prevent software dependency and sharing bugged code.
+
+2. I agree that software does not necessarily fail in the same sense as a mechanical system.
+Software failures are often caused by logical errors that are often not thought of to 
+be possible (such as the 64-bit format to a 16-bit format overflow error) and are not 
+necessarily measured or calculated the same as things that lead to mechanical errors, like
+mismeasurements, material quality, etc.
