@@ -1,0 +1,32 @@
+Jenna Zhu
+jennazhu@bu.edu
+
+CS111 Problem Set 2 
+Task 3
+
+1. mystery(1, 7) = 15
+   -------------
+    a = 1
+    b = 7
+    myst_rest = mystery(2, 5) = 8
+    return 7 + 8 = 15
+
+    mystery(2, 5)
+    -----------------
+        a = 2
+        b = 5
+        myst_rest = mystery(3, 3) = 3
+        return 5 + 3 
+	
+	mystery(3, 3)
+	-----------------
+	a = 3
+	b = 3
+	return 3
+
+2. 15
+
+3. 4 (including the global scope stack frame)
+
+4. if b is less than a (i.e. a = 4 and b = 3) or if the difference between a and b is initially 1 (i.e. if a = 1 and b = 2).
+There would be infinite recursion since there will never be a case where a == b from the constant algorithm (a + 1, b -2)

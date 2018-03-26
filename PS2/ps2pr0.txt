@@ -1,0 +1,33 @@
+Jenna Zhu
+jennazhu@bu.edu
+
+CS111 Problem Set 2
+Task 0
+
+
+1. The most interesting idea in this article for me was Watson's ability to parse language
+and the questions given on Jeopardy. I also enjoyed the information on Watson's confidence
+"logic"/"algorithm" and how that affects Watson's buzz-in time. Watson's ability to parse speech
+and its buzz-in time correlating with its confidence level reflects a regular, human contestant's,
+that's why I find it so interesting. Although Watson is far from being human, the steps that it takes
+to process the question and answer it is very similar to humans when it comes to understanding
+language/speech as well as actions based on confidence level.
+
+2. Watson's technology can definitely be used heavily in the medical field/community as well as
+just every day life. For instance, Amazon's Alexa is very similar to Watson's capabilities.
+Individuals can ask Alexa questions like what is today's weather, play this certain song for me,
+etc, and Alexa would process the speech/command just as Watson would, search for the weather,
+and produce an outcome. As for the medical field, medical diagnosises are based off of compiling
+specific symptoms and concluding to a certain diagnosis. Using Watson's technology, there would
+be an ease of memorizing medical symptoms and information and compiling all of them to come to a
+conclusion and possibly reduce misdiagnosis and difficulty memorizing information.
+
+3. Watson has a static database of information while humans have their own, physical memory to 
+go off of (as well as the internet). While Watson can spend miliseconds finding and producing
+an answer from a large database, humans often forget things or remember things incorrectly.
+Unlike humans, Watson uses key words when it parses comands/speech which can often produce
+many answers that may not be correct (for instance, the Jeopardy question about U.S. Cities 
+that Watson responded with "What is Toronto?????") due to lots of data/different outcomes for
+a general question in human language. A similarity between Watson-thinking and human-thinking
+is that the time they both take in producing an answer correlates with their confidence levels:
+lower confidence leads to a longer time taken to answer a question, and vice versa for higher confidence levels

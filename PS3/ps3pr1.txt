@@ -1,0 +1,87 @@
+Jenna Zhu
+jennazhu@bu.edu
+
+CS111 - Problem Set 3
+Probem 1
+
+1. mystery1
+
+global scope
+ x  |  y
+-----------
+  5 |  4
+  5 |  8
+ 15 |  8
+
+
+local variables
+  x  |  y  |  lc
+------------------
+   4 |     |
+     |  0  | [-1,
+     |  1  | [-1, 1,
+     |  2  | [-1, 1, 3
+     |  3  | [-1, 1, 3, 5]
+  5  |     |
+     |  0  | [-1,
+     |  1  | [-1, 1,
+     |  2  | [-1, 1, 3
+     |  3  | [-1, 1, 3, 5
+     |  4  | [-1, 1, 3, 5, 7]
+
+
+output
+----------
+5 8
+15 8
+
+
+2. mystery2
+
+mystery2([-2, 1, -5, 4])
+------------------------------
+	x     |  scored_vals
+     -------------------------
+	-2    |	[[4, -2], 
+	 1    | [[4, -2], [1, 1],
+	-5    | [[4, -2], [1, 1], [25, -5],
+	 4    | [[4, -2], [1, 1], [25, -5], [16, 4]]
+
+	best_pair = [25, -5]
+	return = -5
+
+3. mystery2 returns the integer in the given list with the largest square value
+
+
+4.
+
+mystery3('banana') = 'nnb'
+------------------------
+	s = 'banana'
+	result_rest = mystery3('anana') = 'nn'
+	return = 'nn' + 'b' = 'nnb'
+
+	mystery3('anana')
+	------------------------
+	s = 'anana'
+	result_rest = mystery3('nana') = 'nn'
+	return = 'nn'
+
+		mystery3('nana')
+		------------------------
+		s = 'nana'
+		result_rest = mystery('na') = 'n'
+		return = 'n' + 'n' = 'nn'
+
+			mystery3('na')
+			------------------------
+			s = 'na'
+			result_rest = mystery('a') = ''
+			return = '' + 'n'
+
+				mystery3('a')
+				------------------------
+				s = 'a'
+				return ''
+
+5. mystery3('banana') has the result of 'nnb'

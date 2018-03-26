@@ -1,0 +1,20 @@
+Jenna Zhu
+jennazhu@bu.edu
+CS111 - Python Problem Set 3
+Problem 0
+
+
+1. I found it very interesting that something based on a bio-molecular scale such as
+	DNA, RNA, enzymes, etc, can be used and use the same logic as computers
+	in games such as tic-tac-toe and guessing games. Although it is funny to
+	see the similarities, it's a bit disappointing (but also understandable)
+	that simple things such as a move in tic-tac-toe takes about half an hour
+	to move compared to the speed of a move that can be done in the game if
+	it were to be implemented into a computer game or just on paper.
+
+2. Similar to our homework problems, but not as complex, the problems solved by the 
+	DNA computers use "logic gates", similar to our if-else statements and 
+	branches, in order to determine the answer or conclusion, such as 
+	if a human player/scientist came the closest in the identification game
+	where the test tube would glow different colored flourescent signals.
+		
