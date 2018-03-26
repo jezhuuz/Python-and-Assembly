@@ -1,0 +1,23 @@
+#
+# Jenna Zhu
+# jennazhu@bu.edu
+#
+# ps5pr7.txt (Problem Set 5, Problem 7)
+#
+# Cubic countdown
+# 1. ask the user for an input (assume input will be positive and less than 30)
+# 2. computes cube of that input (multiple mutiplications)
+# 3. prints result
+# [[add temporary halt statement to test current version of program]]
+# 4. counts downtward from the cube of the input to 0, one integer at a time and prints values
+# 5. halt!
+#
+
+00   read r1          # get # from user and store it in r1
+01   mul r2 r1 r1     # r2 = r1*r1
+02   mul r2 r2 r1     # r2 = r2 * r1 = r1 * r1 * r1
+03   write r2         # print the value of cube
+04   addn r2 -1       # r2 = r2 + -1
+05   write r2	      # countdown!
+06   jnezn r2 04      # if r2 != 0, jump to line 04 and continue to loop til r2 == 0
+07   halt             # cubic countdown program finished!

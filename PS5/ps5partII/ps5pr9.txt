@@ -1,0 +1,41 @@
+#
+# ps5pr9.txt (Problem Set 5, Problem 9)
+#
+# Calling a distance function twice
+#
+# write a Hmmm that implements a function for computing the distance between two integers
+# ...and uses that function twice to determine which of two candidate values is closer
+# ...to a third value:
+# 1. read 3 integers from the user:
+# - x0: reference balue
+# - x1: first candidate value
+# - x2: second candidate value
+# 2. call a single separate function twice to compute:
+# - the distance between x0 and x1
+# - the distance between x0 and x2
+# 3. determine which of x1 or x2 is closer to x0 and print the closer of the two
+# *if x1 and x2 are equally close to x0, print x1
+
+
+00   read r1          # get x0 from user
+01   read r2          # get x1 from user
+02   copy r3 r2	      # store copy of x1 into r3
+03   call r14 15      # first call to distance function (x1 - x0)
+04   copy r9 r12      # copy distance of x1 - x0 into r9
+05   read r2          # get x2 from user
+06   copy r4 r2       # store copy of x2 into r4
+07   call r14 15      # second call to distance function (x2 - x0)
+08   copy r5 r12      # copy distance of x2 - x0 into r5
+09   sub r10 r5 r9  # r10 = x2- x1: determine if distance of x1 (r12) or x2 (r13) is closer
+10   jltzn r10 13     # if distance of x2 < x1, jump to line 13
+11   write r3         # write x1 if equally close or if x1 is closer than x2
+12   halt
+13   write r4         # write x2 if x2 is closer
+14   halt
+15   copy r12 r2      # start of distance function, copy x1 or x2 into r12
+16   jltzn r2 19      # check if x1 or x2 is a negative number
+17   sub r12 r2 r1    # r12 = x1 - x0 or r12 = x2 - x0
+18   jumpr r14
+19   setn r6 -1
+20   sub r12 r1 r2    #switch it around so x0 + x1 if x1 is negative (x0 - (-x1))
+21   jumpr r14
