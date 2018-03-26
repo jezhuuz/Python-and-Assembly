@@ -1,0 +1,39 @@
+#
+# Jenna Zhu
+# jennazhu@bu.edu
+# ps6pr6.txt (Problem Set 6, Problem 6)
+#
+# The Fibonacci sequence in assembly
+#
+
+# r1 will be the user input register
+# r2 will be the input to the function register
+# r3 will be the current fib
+# r4 will be the previous 1 fib (fib1)
+# r5 will be the previous 2 fib (fib2)
+# r6 will be the counter
+# r7 will be the sum
+# r8 will be the difference between user input and the counter, which is to determine if the loop should end
+# r14 will be the return address of the function
+# r13 will be the return value of the function
+
+00 read r1	# get number from user
+01 addn r1 0	# to later be used for the while loop (i.e. while count < (user input+1))
+02 setn r3 0	# this will act as current
+03 setn r4 1	# this will act as fib1
+04 setn r5 1	# this will act as fib2
+05 setn r7 1	# this will act as the sum register
+06 setn r6 1	# this will act as the counter
+07 call r14 10  # call to fib()
+08 write r7	# print the sum after fib() is done
+09 halt
+10 write r4	# print F0 = 1
+11 write r5	# print out the fibonacci number
+12 add r7 r7 r5 # sum = sum + fib number
+13 copy r3 r4	# current = fib1
+14 copy r4 r5	# fib1 = fib2
+15 add r5 r5 r3 # fib2 = fib2 + current
+16 addn r6 1	# counter += 1 
+17 sub r8 r1 r6	# r8 = user input - counter to use for while loop
+18 jgtzn r8 11	# if count < userinput+1, keep calculating the fibonacci number
+19 jumpr r14	# fib(r1) is done

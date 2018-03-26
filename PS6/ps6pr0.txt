@@ -1,0 +1,18 @@
+Jenna Zhu
+CS111 
+Problem Set 6 Problem 0
+
+
+1. In light of the reading, I argue that computational models can hurt society. There is no doubt that computational models 
+can help society, however, I believe that computational models can hurt society as well by giving a sense of 
+the financial market, for instance, having a strict pattern that society may view as the concrete truth.
+Especially in the financial market, patterns do occur and can be predicted based on past events, however, often times 
+the market does not behave normally, and many surprising, unsuspecting crashes occur due to world events or other non-predictable 
+things. Computational models can give a good idea of risk predictions and predictions of the future, but especially when it 
+comes to climate change, global warming, pollution, and how our world and weather is progressing throughout the years and how
+our world would look like in the future, computational models can ironically do the opposite of warn people and push them 
+to change their behavior. With far away predictions like how our temperatures will be like in 2047, computational models
+can cause a false sense of stability, and may even cause people to not take actions and reduce their pollution and emission
+levels just because it seems like such a far away date. Computational models are also often based on pattern and history,
+but it will hurt us more than help us because of our own thinking and actions and because of unpredicted events that may
+throw the computational model off.

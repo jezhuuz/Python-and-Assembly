@@ -1,0 +1,166 @@
+    <html>
+    <head>
+      <script src="https://cdn.rawgit.com/konvajs/konva/2.0.2/konva.min.js"></script>
+      <meta charset="utf-8">
+      <title>Compos</title>
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #F0F0F0;
+        }
+        #container {
+            background: black url("https://image.ibb.co/cJB5zc/Screen_Shot_2018_03_17_at_4_27_52_PM.png") no-repeat 1px 0px;
+            /*background-size: 75%;*/
+        }
+      </style> 
+    </head>
+    <body onresize="areaDraw()">
+      <div id="container">
+        
+        </div>
+      </div>
+      <script>
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+
+        function updateTooltip(tooltip, x, y, text) {
+            tooltip.getText().setText(text);
+            tooltip.setPosition({
+                x : x,
+                y : y
+            });
+            tooltip.show();
+        }
+        var stage = new Konva.Stage({
+            container: 'container',
+            width: width,
+            height: height
+        });
+        var shapesLayer = new Konva.Layer();
+        var tooltipLayer = new Konva.Layer();
+
+        var tooltip = new Konva.Label({
+            opacity: 0.75,
+            visible: false,
+            listening: false
+        });
+
+
+        function getData() {
+            console.log('getData called');
+
+            var stageWidth = window.innerWidth;
+            console.log("stageWidth =", stageWidth);
+            
+            var containerWidth = 947;
+            console.log("containerWidth =", containerWidth);
+
+            var scale = containerWidth/stageWidth;
+            console.log("scale =", scale);
+
+            return {    
+                'Library': {
+                    color: 'red',
+                    points: [87, 286, 87, 507, 204, 506, 204, 287] 
+                },
+                '2nd Floor': {
+                    color: 'blue',
+                    points: [719, 584, 837, 584, 837, 646, 719, 646]
+                },
+                '3rd Floor': {
+                    color: 'yellow',
+                    points: [73, 192, 73, 160, 340, 23, 500, 109, 499, 139, 342, 93]
+                },
+                'Gym': {
+                    color: 'green',
+                    points: [498, 283, 503, 146, 560, 136, 576, 144, 576, 278, 500, 283]
+                }
+            };
+        }
+
+        tooltip.add(new Konva.Tag({
+            fill: 'black',
+            pointerDirection: 'down',
+            pointerWidth: 10,
+            pointerHeight: 10,
+            lineJoin: 'round',
+            shadowColor: 'black',
+            shadowBlur: 10,
+            shadowOffset: 10,
+            shadowOpacity: 0.5
+        }));
+
+        tooltip.add(new Konva.Text({
+            text: '',
+            fontFamily: 'Calibri',
+            fontSize: 18,
+            padding: 5,
+            fill: 'white'
+        }));
+
+        tooltipLayer.add(tooltip);
+
+        function areaDraw(){
+
+            console.log("areaDraw called");
+
+            // get areas data
+            var areas = getData();
+
+            // draw areas
+            for(var key in areas) {
+
+                var area = areas[key];
+                var points = area.points;
+
+                var shape = new Konva.Line({
+                    points: points,
+                    fill: area.color,
+                    opacity: 0,
+                    closed : true,
+                    // custom attr
+                    key: key
+                });
+
+                shapesLayer.add(shape);
+
+        }
+    }
+
+        areaDraw();
+
+        stage.add(shapesLayer);
+        stage.add(tooltipLayer);
+
+        stage.on('mouseover', function(evt) {
+            var shape = evt.target;
+            if (shape) {
+                shape.setOpacity(0.5);
+                shapesLayer.draw();
+            }
+        });
+        stage.on('mouseout', function(evt) {
+            var shape = evt.target;
+            if (shape) {
+                shape.setOpacity(0);
+                shapesLayer.draw();
+                tooltip.hide();
+                tooltipLayer.draw();
+            }
+        });
+        stage.on('mousemove', function(evt) {
+            var shape = evt.target;
+            if (shape) {
+                var mousePos = stage.getPointerPosition();
+                var x = mousePos.x;
+                var y = mousePos.y - 5;
+                updateTooltip(tooltip, x, y, shape.attrs.key);
+                tooltipLayer.batchDraw();
+            }
+        });
+      </script>
+
+      </body>
+    </html>
